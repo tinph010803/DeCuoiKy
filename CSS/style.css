@@ -1,0 +1,13 @@
+/* *{
+    margin: 0;
+    padding: 0;
+} */
+.nut {
+    border: none;
+    color: blueviolet;
+    background-color: white;
+}
+.btn button.nut:hover {
+    background-color: #f436a8; 
+    color: #FFFFFF; 
+}
