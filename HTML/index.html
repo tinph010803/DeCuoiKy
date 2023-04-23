@@ -7,6 +7,8 @@
     <title>Bài tập ôn Cuối Kì</title>
     <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
     <link rel="stylesheet" href="../CSS/style.css" />
+    <script src="../JS/bootstrap.min.js"></script>
+    <script src="../JS/jquery-3.6.0.js"></script>
   </head>
   <body>
     <div class="container">
@@ -15,8 +17,20 @@
       </div>
       <div class="btn">
         <button class="nut"><a href="../HTML/index.html"></a> Trang chủ</button>
-        <button class="nut">Đặt lịch</button>
+        <button class="nut" id="open-modal">Đặt lịch</button>
       </div>
+
+      <!-- <nav class="navbar navbar-expand-sm">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a href="../HTML/index.html" class="nav-link">Trang chủ</a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link" id="open-modal">Đặt lịch</a>
+    </li>
+  </ul>
+</nav> -->
+
       <table class="table border border-dark">
         <tr>
           <th>STT</th>
@@ -26,7 +40,83 @@
           <th>Phụ thu dịch vụ</th>
           <th>Chuyên khoa</th>
         </tr>
+
+        <!-- Phan than khi them du lieu vao -->
+        <tbody id="tbody"></tbody>
       </table>
+
+      <footer class="col-15">
+        <h3 style="display: flex; justify-content: center; margin-top: 30%">
+          21018801- Phan Hữu Tín
+        </h3>
+      </footer>
+
+      <div id="modal" class="modal fade">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="col-11 text-left">Đặt lịch khám online</h5>
+              <button class="close btn-close col-1" data-dismiss="modal">
+                &times;
+              </button>
+            </div>
+
+            <div class="modal-body">
+              <form action="" id="form" class="/action_page.php">
+                <div class="form-group">
+                  <label for="mabenhnhan"><b>Mã bệnh nhân</b></label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    id="mabenhnhan"
+                    placeholder="Mã bệnh nhân"
+                  />
+                  <span class="ma-mes text-danger"><i>(*)</i></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="matkhau"><b>Mật khẩu</b></label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    id="matkhau"
+                    placeholder="Mật khẩu"
+                  />
+                  <span class="mk-mes text-danger"><i>(*)</i></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="ngaykham"><b>Ngày khám</b></label>
+                  <input class="form-control" type="date" id="ngaykham" />
+                  <span class="nk-mes text-danger"><i>(*)</i></span>
+                </div>
+
+                <div class="form-group form-check">
+                  <label class="form-check-label"><b>Loại dịch vụ</b></label
+                  ><br />
+                  <input type="checkbox" id="phuthuKhamBenh" />
+                  <label for="phuthuKhamBenh">Khám bệnh theo yêu cầu</label>
+                  <input type="checkbox" id="phuthuDieuTri" />
+                  <label for="phuthuDieuTri">Điều trị ngoại trú</label>
+                  <input type="checkbox" id="phuthuBacSi" />
+                  <label for="phuthuBacSi">Bác sĩ theo yêu cầu</label>
+                </div>
+
+                <div class="form-group">
+                  <label><b>Chuyên khoa</b></label>
+                  <select id="chuyenkhoa" class="form-control">
+                    <option value="Ngoại tổng quát">Ngoại tổng quát</option>
+                    <option value="Nhi">Nhi</option>
+                    <option value="Nội tổng quát">Nội tổng quát</option>
+                  </select>
+                </div>
+                <button class="btn btn-info" id="btn-submit">Đặt lịch</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    <script src="../JS/index.js"></script>
   </body>
 </html>
